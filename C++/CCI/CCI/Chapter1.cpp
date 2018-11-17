@@ -48,3 +48,23 @@ bool Chapter1::isPermutation(string s1, string s2)
 
 	return foundChars == 0;
 }
+
+void Chapter1::urlify(string& s, int trueLength)
+{
+	int lastIndex = s.length() - 1;
+	for (auto i = trueLength - 1; i >= 0; i--)
+	{
+		if (s[i] == ' ')
+		{
+			s[lastIndex] = '0';
+			s[lastIndex - 1] = '2';
+			s[lastIndex - 2] = '%';
+			lastIndex -= 3;
+		}
+		else
+		{
+			s[lastIndex] = s[i];
+			lastIndex--;
+		}
+	}
+}
