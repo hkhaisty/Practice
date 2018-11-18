@@ -68,3 +68,40 @@ void Chapter1::urlify(string& s, int trueLength)
 		}
 	}
 }
+
+bool Chapter1::isPermutationPalindrome(string s)
+{
+	unordered_map<char, int> characterCount;
+	for (auto character : s)
+	{
+		character = tolower(character);
+
+		if (character == ' ') continue; 
+
+		if (characterCount[character])
+		{
+			characterCount[character]++;
+		}
+		else
+		{
+			characterCount[character] = 1;
+		}
+	}
+
+	auto oddCount = 0;
+	for (auto i = 0; i < characterCount.size(); i++)
+	{
+		if (oddCount > 1)
+		{
+			return false;
+		}
+
+		if (characterCount[i] % 2 != 0)
+		{
+			oddCount++;
+		}
+	}
+
+	return oddCount <= 1;
+}
+

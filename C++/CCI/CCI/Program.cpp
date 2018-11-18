@@ -4,9 +4,8 @@
 
 int main()
 {
-	string toUrl = "github .com  ";
-	Chapter1::urlify(toUrl, 11);
-	cout << toUrl;
+	string test = "Asun tarts ur";
+	cout << boolalpha << Chapter1::isPermutationPalindrome(test);
 
 	getchar();
 
