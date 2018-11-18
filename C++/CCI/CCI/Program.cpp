@@ -4,9 +4,9 @@
 
 int main()
 {
-	string test = "Asun tarts u";
-	cout << boolalpha << Chapter1::isPermutationPalindrome(test);
-
+	string test = "Taco Ca";
+	cout << boolalpha << Chapter1::isPermutationOfPalindromeHashTable(test) << endl;
+	cout << boolalpha << Chapter1::isPermutationOfPalindromeBitVector(test); 
 	getchar();
 
 	return 0;

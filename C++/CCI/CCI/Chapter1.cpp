@@ -33,7 +33,7 @@ bool Chapter1::isUniqueNoExtraDataStructure(string s)
 	return true;	
 }
 
-bool Chapter1::isPermutation(string s1, string s2)
+bool Chapter1::isPermutationXOR(string s1, string s2)
 {
 	if (s1.length() != s2.length())
 	{
@@ -69,7 +69,7 @@ void Chapter1::urlify(string& s, int trueLength)
 	}
 }
 
-bool Chapter1::isPermutationPalindrome(string s)
+bool Chapter1::isPermutationOfPalindromeHashTable(string s)
 {
 	auto oddCount = 0;
 	unordered_map<char, int> characterCount;
@@ -90,4 +90,28 @@ bool Chapter1::isPermutationPalindrome(string s)
 
 	return oddCount <= 1;
 }
+
+bool Chapter1::isPermutationOfPalindromeBitVector(string s)
+{
+	auto bitVector = 0;
+	for (auto character : s)
+	{
+		if (character == ' ') 
+			continue;
+
+		auto index = tolower(character) - 'a';
+		auto mask = 1 << index;
+		if ((bitVector & mask) == 0)
+		{
+			bitVector |= mask;
+		}
+		else
+		{
+			bitVector &= ~mask;
+		}
+	}
+
+	return (bitVector & bitVector - 1) == 0;
+}
+
 
