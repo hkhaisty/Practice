@@ -4,7 +4,7 @@
 
 int main()
 {
-	string test = "Asun tarts ur";
+	string test = "Asun tarts u";
 	cout << boolalpha << Chapter1::isPermutationPalindrome(test);
 
 	getchar();

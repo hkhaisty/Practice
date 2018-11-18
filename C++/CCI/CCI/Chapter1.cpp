@@ -71,35 +71,21 @@ void Chapter1::urlify(string& s, int trueLength)
 
 bool Chapter1::isPermutationPalindrome(string s)
 {
+	auto oddCount = 0;
 	unordered_map<char, int> characterCount;
 	for (auto character : s)
 	{
+		if (character == ' ') continue;
+
 		character = tolower(character);
-
-		if (character == ' ') continue; 
-
-		if (characterCount[character])
+		if (!characterCount[character])
 		{
-			characterCount[character]++;
-		}
-		else
-		{
-			characterCount[character] = 1;
-		}
-	}
-
-	auto oddCount = 0;
-	for (auto i = 0; i < characterCount.size(); i++)
-	{
-		if (oddCount > 1)
-		{
-			return false;
+			characterCount[character] = 0;
 		}
 
-		if (characterCount[i] % 2 != 0)
-		{
-			oddCount++;
-		}
+		characterCount[character]++;
+
+		oddCount += characterCount[character] % 2 != 0 ? 1 : -1;
 	}
 
 	return oddCount <= 1;
