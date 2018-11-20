@@ -9,4 +9,5 @@ public:
 	static void urlify(string& s, int trueLength);
 	static bool isPermutationOfPalindromeHashTable(string s);
 	static bool isPermutationOfPalindromeBitVector(string s);
+	static bool areOneEditAway(string s1, string s2);
 };

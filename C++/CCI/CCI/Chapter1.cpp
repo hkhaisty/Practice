@@ -114,4 +114,50 @@ bool Chapter1::isPermutationOfPalindromeBitVector(string s)
 	return (bitVector & bitVector - 1) == 0;
 }
 
+bool Chapter1::areOneEditAway(string s1, string s2)
+{
+	if (abs(static_cast<int>(s1.length() - s2.length())) > 1)
+	{
+		return false;
+	}
+
+	auto shorter = s1.length() < s2.length() ? s1 : s2;
+	auto longer = shorter == s1 ? s2 : s1;
+
+	unordered_map<char, int> characterCount;
+	for (auto c : shorter)
+	{
+		if (!characterCount[c])
+		{
+			characterCount[c] = 0;
+		}
+
+		characterCount[c]++;
+	}
+
+	auto charDiff = 0;
+	for (auto c : longer)
+	{
+		if (!characterCount[c])
+		{
+			charDiff++;
+		}
+		else
+		{
+			characterCount[c]--;
+			if (characterCount[c] < 0)
+			{
+				charDiff++;
+			}
+		}
+		if (charDiff > 1)
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
 

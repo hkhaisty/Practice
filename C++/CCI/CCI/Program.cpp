@@ -4,9 +4,10 @@
 
 int main()
 {
-	string test = "Taco Ca";
-	cout << boolalpha << Chapter1::isPermutationOfPalindromeHashTable(test) << endl;
-	cout << boolalpha << Chapter1::isPermutationOfPalindromeBitVector(test); 
+	string s1 = "pale";
+	string s2 = "bake";
+
+	cout << boolalpha << Chapter1::areOneEditAway(s1, s2);
 	getchar();
 
 	return 0;
