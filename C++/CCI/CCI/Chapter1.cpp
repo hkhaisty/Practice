@@ -3,6 +3,11 @@
 
 bool Chapter1::isUnique(string s)
 {
+	if (s.empty())
+	{
+		return false;
+	}
+
 	unordered_map<char, int> characters;
 	for (auto character : s)
 	{
@@ -19,6 +24,11 @@ bool Chapter1::isUnique(string s)
 
 bool Chapter1::isUniqueNoExtraDataStructure(string s)
 {
+	if (s.empty())
+	{
+		return false;
+	}
+
 	for (auto i = 0; i < s.length(); i++)
 	{
 		for (auto j = i + 1; j < s.length(); j++)
@@ -71,6 +81,11 @@ void Chapter1::urlify(string& s, int trueLength)
 
 bool Chapter1::isPermutationOfPalindromeHashTable(string s)
 {
+	if (s.empty())
+	{
+		return false;
+	}
+
 	auto oddCount = 0;
 	unordered_map<char, int> characterCount;
 	for (auto character : s)
@@ -93,6 +108,11 @@ bool Chapter1::isPermutationOfPalindromeHashTable(string s)
 
 bool Chapter1::isPermutationOfPalindromeBitVector(string s)
 {
+	if (s.empty())
+	{
+		return false;
+	}
+
 	auto bitVector = 0;
 	for (auto character : s)
 	{
@@ -114,7 +134,7 @@ bool Chapter1::isPermutationOfPalindromeBitVector(string s)
 	return (bitVector & bitVector - 1) == 0;
 }
 
-bool Chapter1::areOneEditAway(string s1, string s2)
+bool Chapter1::IsOneEditAway(string s1, string s2)
 {
 	if (abs(static_cast<int>(s1.length() - s2.length())) > 1)
 	{
