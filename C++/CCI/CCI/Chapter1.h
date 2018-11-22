@@ -11,4 +11,5 @@ public:
 	static bool isPermutationOfPalindromeBitVector(string s);
 	static bool isOneEditAway(string s1, string s2);
 	static string compressString(string s);
+	static void rotateMatrix(vector<vector<int>>& matrix);
 };

@@ -4,7 +4,7 @@
 TEST_CLASS(TestChapter1)
 {
 public:
-	TEST_METHOD(TestIsUnique)
+	TEST_METHOD(testIsUnique)
 	{
 		string emptyString;
 		string nonUniqueString = "10%#@@ll1";
@@ -15,7 +15,7 @@ public:
 		Assert::IsTrue(Chapter1::isUnique(uniqueString));
 	}
 
-	TEST_METHOD(TestIsUniqueNoExtraDataStructure)
+	TEST_METHOD(testIsUniqueNoExtraDataStructure)
 	{
 		string emptyString;
 		string nonUniqueString = "10%#@@ll1";
@@ -26,7 +26,7 @@ public:
 		Assert::IsTrue(Chapter1::isUniqueNoExtraDataStructure(uniqueString));
 	}
 
-	TEST_METHOD(TestIsPermutationXOR)
+	TEST_METHOD(testIsPermutationXOR)
 	{
 		string emptyString;
 		string shortString = "cat533%";
@@ -39,7 +39,7 @@ public:
 		Assert::IsTrue(Chapter1::isPermutationXor(longString, otherLongString));
 	}
 
-	TEST_METHOD(TestUrlify)
+	TEST_METHOD(testUrlify)
 	{
 		string emptyString;
 		string withSpaces = "my%20weird%20blog.com";
@@ -57,7 +57,7 @@ public:
 		Assert::AreEqual(noSpaces, testNoSpaces);
 	}
 
-	TEST_METHOD(TestIsPermutationOfPalindromeHashTable)
+	TEST_METHOD(testIsPermutationOfPalindromeHashTable)
 	{
 		string emptyString;
 		string validString = "aaBB cc 333";
@@ -68,7 +68,7 @@ public:
 		Assert::IsFalse(Chapter1::isPermutationOfPalindromeHashTable(invalidString));
 	}
 
-	TEST_METHOD(TestIsPermutationOfPalindromeBitVector)
+	TEST_METHOD(testIsPermutationOfPalindromeBitVector)
 	{
 		string emptyString;
 		string validString = "aaBB cc 333";
@@ -79,7 +79,7 @@ public:
 		Assert::IsFalse(Chapter1::isPermutationOfPalindromeBitVector(invalidString));
 	}
 
-	TEST_METHOD(TestIsOneEditAway)
+	TEST_METHOD(testIsOneEditAway)
 	{
 		string ark = "ark";
 		string park = "park";
@@ -97,7 +97,7 @@ public:
 		Assert::IsTrue(Chapter1::isOneEditAway(park, parks));
 	}
 
-	TEST_METHOD(TestCompressString)
+	TEST_METHOD(testCompressString)
 	{
 		string emptyString = "";
 		string willCompress = "aabcccccaaa";

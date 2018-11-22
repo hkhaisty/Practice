@@ -176,7 +176,7 @@ bool Chapter1::isOneEditAway(string s1, string s2)
 string Chapter1::compressString(string s)
 {
 	string result;
-	result.reserve(s.length());
+	result.reserve(s.length() * 2);
 	for (auto i = 0, j = 0; i < s.length(); i = j)
 	{
 		auto charCount = 0;
@@ -189,6 +189,11 @@ string Chapter1::compressString(string s)
 	}
 
 	return result.length() < s.length() ? result : s;
+}
+
+void Chapter1::rotateMatrix(vector<vector<int>>& matrix)
+{
+	
 }
 
 
