@@ -43,7 +43,7 @@ bool Chapter1::isUniqueNoExtraDataStructure(string s)
 	return true;	
 }
 
-bool Chapter1::isPermutationXOR(string s1, string s2)
+bool Chapter1::isPermutationXor(string s1, string s2)
 {
 	if (s1.length() != s2.length())
 	{
@@ -134,7 +134,7 @@ bool Chapter1::isPermutationOfPalindromeBitVector(string s)
 	return (bitVector & bitVector - 1) == 0;
 }
 
-bool Chapter1::IsOneEditAway(string s1, string s2)
+bool Chapter1::isOneEditAway(string s1, string s2)
 {
 	if (abs(static_cast<int>(s1.length() - s2.length())) > 1)
 	{
@@ -144,39 +144,51 @@ bool Chapter1::IsOneEditAway(string s1, string s2)
 	auto shorter = s1.length() < s2.length() ? s1 : s2;
 	auto longer = shorter == s1 ? s2 : s1;
 
-	unordered_map<char, int> characterCount;
-	for (auto c : shorter)
-	{
-		if (!characterCount[c])
-		{
-			characterCount[c] = 0;
-		}
-
-		characterCount[c]++;
-	}
-
+	auto sIter = shorter.begin(), lIter = longer.begin();
 	auto charDiff = 0;
-	for (auto c : longer)
+	while (sIter != shorter.end() && lIter != longer.end())
 	{
-		if (!characterCount[c])
+		if (*sIter != *lIter)
 		{
 			charDiff++;
+
+			if (charDiff > 1)
+			{
+				return false;
+			}
+
+			if (shorter.length() == longer.length())
+			{
+				++sIter;
+			}
 		}
 		else
 		{
-			characterCount[c]--;
-			if (characterCount[c] < 0)
-			{
-				charDiff++;
-			}
+			++sIter;
 		}
-		if (charDiff > 1)
-		{
-			return false;
-		}
+
+		++lIter;
 	}
 
 	return true;
+}
+
+string Chapter1::compressString(string s)
+{
+	string result;
+	result.reserve(s.length());
+	for (auto i = 0, j = 0; i < s.length(); i = j)
+	{
+		auto charCount = 0;
+		while(s[i] == s[j])
+		{
+			charCount++;
+			j++;
+		}
+		result += s[i] + to_string(charCount);
+	}
+
+	return result.length() < s.length() ? result : s;
 }
 
 

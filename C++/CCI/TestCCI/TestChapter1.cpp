@@ -33,10 +33,10 @@ public:
 		string longString = "@strL0n64llTT712";
 		string otherLongString = "217TTlln0Lstr46@";
 
-		Assert::IsFalse(Chapter1::isPermutationXOR(emptyString, shortString));
-		Assert::IsFalse(Chapter1::isPermutationXOR(shortString, longString));
-		Assert::IsFalse(Chapter1::isPermutationXOR(longString, emptyString));
-		Assert::IsTrue(Chapter1::isPermutationXOR(longString, otherLongString));
+		Assert::IsFalse(Chapter1::isPermutationXor(emptyString, shortString));
+		Assert::IsFalse(Chapter1::isPermutationXor(shortString, longString));
+		Assert::IsFalse(Chapter1::isPermutationXor(longString, emptyString));
+		Assert::IsTrue(Chapter1::isPermutationXor(longString, otherLongString));
 	}
 
 	TEST_METHOD(TestUrlify)
@@ -87,13 +87,29 @@ public:
 		string bard = "bard";
 		string parks = "parks";
 
-		Assert::IsFalse(Chapter1::IsOneEditAway(ark, parks));
-		Assert::IsFalse(Chapter1::IsOneEditAway(dark, parks));
-		Assert::IsFalse(Chapter1::IsOneEditAway(bard, dark));
-		Assert::IsFalse(Chapter1::IsOneEditAway(park, bard));
-		Assert::IsTrue(Chapter1::IsOneEditAway(ark, park));
-		Assert::IsTrue(Chapter1::IsOneEditAway(ark, dark));
-		Assert::IsTrue(Chapter1::IsOneEditAway(park, dark));
-		Assert::IsTrue(Chapter1::IsOneEditAway(park, parks));
+		Assert::IsFalse(Chapter1::isOneEditAway(ark, parks));
+		Assert::IsFalse(Chapter1::isOneEditAway(dark, parks));
+		Assert::IsFalse(Chapter1::isOneEditAway(bard, dark));
+		Assert::IsFalse(Chapter1::isOneEditAway(park, bard));
+		Assert::IsTrue(Chapter1::isOneEditAway(ark, park));
+		Assert::IsTrue(Chapter1::isOneEditAway(ark, dark));
+		Assert::IsTrue(Chapter1::isOneEditAway(park, dark));
+		Assert::IsTrue(Chapter1::isOneEditAway(park, parks));
+	}
+
+	TEST_METHOD(TestCompressString)
+	{
+		string emptyString = "";
+		string willCompress = "aabcccccaaa";
+		string wontCompress = "abcd";
+		string longCompress = "AAAAAAAAAAAABBBBBBBBBBBccccccccZZZZZeeeeeLLLLL";
+		
+		string willCompressExpected = "a2b1c5a3";
+		string longCompressExpected = "A12B11c8Z5e5L5";
+
+		Assert::AreEqual(emptyString, Chapter1::compressString(emptyString));
+		Assert::AreEqual(willCompressExpected, Chapter1::compressString(willCompress));
+		Assert::AreEqual(wontCompress, Chapter1::compressString(wontCompress));
+		Assert::AreEqual(longCompressExpected, Chapter1::compressString(longCompress));
 	}
 };
