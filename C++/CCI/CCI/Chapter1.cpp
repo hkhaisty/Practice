@@ -1,14 +1,13 @@
-#include "stdafx.h"
 #include "Chapter1.h"
 
-bool Chapter1::isUnique(string s)
+bool Chapter1::isUnique(std::string s)
 {
 	if (s.empty())
 	{
 		return false;
 	}
 
-	unordered_map<char, int> characters;
+	std::unordered_map<char, int> characters;
 	for (auto character : s)
 	{
 		if (characters[character])
@@ -22,7 +21,7 @@ bool Chapter1::isUnique(string s)
 	return true;
 }
 
-bool Chapter1::isUniqueNoExtraDataStructure(string s)
+bool Chapter1::isUniqueNoExtraDataStructure(std::string s)
 {
 	if (s.empty())
 	{
@@ -43,7 +42,7 @@ bool Chapter1::isUniqueNoExtraDataStructure(string s)
 	return true;	
 }
 
-bool Chapter1::isPermutationXor(string s1, string s2)
+bool Chapter1::isPermutationXor(std::string s1, std::string s2)
 {
 	if (s1.length() != s2.length())
 	{
@@ -59,7 +58,7 @@ bool Chapter1::isPermutationXor(string s1, string s2)
 	return foundChars == 0;
 }
 
-void Chapter1::urlify(string& s, int trueLength)
+void Chapter1::urlify(std::string& s, int trueLength)
 {
 	int lastIndex = s.length() - 1;
 	for (auto i = trueLength - 1; i >= 0; i--)
@@ -79,7 +78,7 @@ void Chapter1::urlify(string& s, int trueLength)
 	}
 }
 
-bool Chapter1::isPermutationOfPalindromeHashTable(string s)
+bool Chapter1::isPermutationOfPalindromeHashTable(std::string s)
 {
 	if (s.empty())
 	{
@@ -87,7 +86,7 @@ bool Chapter1::isPermutationOfPalindromeHashTable(string s)
 	}
 
 	auto oddCount = 0;
-	unordered_map<char, int> characterCount;
+	std::unordered_map<char, int> characterCount;
 	for (auto character : s)
 	{
 		if (character == ' ') continue;
@@ -106,7 +105,7 @@ bool Chapter1::isPermutationOfPalindromeHashTable(string s)
 	return oddCount <= 1;
 }
 
-bool Chapter1::isPermutationOfPalindromeBitVector(string s)
+bool Chapter1::isPermutationOfPalindromeBitVector(std::string s)
 {
 	if (s.empty())
 	{
@@ -134,7 +133,7 @@ bool Chapter1::isPermutationOfPalindromeBitVector(string s)
 	return (bitVector & bitVector - 1) == 0;
 }
 
-bool Chapter1::isOneEditAway(string s1, string s2)
+bool Chapter1::isOneEditAway(std::string s1, std::string s2)
 {
 	if (abs(static_cast<int>(s1.length() - s2.length())) > 1)
 	{
@@ -173,9 +172,9 @@ bool Chapter1::isOneEditAway(string s1, string s2)
 	return true;
 }
 
-string Chapter1::compressString(string s)
+std::string Chapter1::compressString(std::string s)
 {
-	string result;
+	std::string result;
 	result.reserve(s.length() * 2);
 	for (auto i = 0, j = 0; i < s.length(); i = j)
 	{
@@ -185,16 +184,45 @@ string Chapter1::compressString(string s)
 			charCount++;
 			j++;
 		}
-		result += s[i] + to_string(charCount);
+		result += s[i] + std::to_string(charCount);
 	}
 
 	return result.length() < s.length() ? result : s;
 }
 
-void Chapter1::rotateMatrix(vector<vector<int>>& matrix)
+void Chapter1::rotateMatrix(std::vector<std::vector<int>>& matrix)
+{
+
+}
+
+void Chapter1::zeroMatrix(std::vector<std::vector<int>>& matrix)
 {
 	
 }
+
+bool Chapter1::isStringRotation(std::string s1, std::string s2)
+{
+	if (s1.length() != s2.length() || s1.empty() || s2.empty())
+	{
+		return false;
+	}
+
+	return isSubstring(s1 + s1, s2);
+}
+
+bool Chapter1::isSubstring(std::string s1, std::string s2)
+{
+	for (auto i = 0; i < s1.length() - s2.length(); i++)
+	{
+		if (s1.substr(i, s2.length()) == s2)
+		{
+			return true;
+		}
+	}
+
+	return false;
+}
+
 
 
 

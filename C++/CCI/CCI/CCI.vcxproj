@@ -20,11 +20,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Chapter1.cpp" />
-    <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Chapter1.h" />
-    <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
