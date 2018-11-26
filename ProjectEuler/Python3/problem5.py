@@ -7,8 +7,8 @@ def gcd(a, b):
 def lcm(a, b):
     return abs(a * b) // gcd(a, b)
 
-def smallest_multiple(limit):
-    divisors = list(range(limit, 0, -1))
+def smallest_multiple(ceiling):
+    divisors = list(range(ceiling, 0, -1))
     smallest_multiple = 2
     while (divisors):
         if smallest_multiple % divisors[-1] == 0:
@@ -19,5 +19,5 @@ def smallest_multiple(limit):
     return smallest_multiple
 
 if __name__ == '__main__':
-    limit = 20
-    print(smallest_multiple(limit))
+    ceiling = 20
+    print(smallest_multiple(ceiling))

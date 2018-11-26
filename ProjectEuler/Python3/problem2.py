@@ -1,12 +1,12 @@
 def is_even(n):
     return n % 2 == 0
 
-def fibonacciEvenSum(limit):
+def fibonacciEvenSum(ceiling):
     fibonacci = [1, 2]
     nextFib = 0
     index = 1
     evenSum = 2
-    while nextFib <= limit:
+    while nextFib <= ceiling:
         nextFib = fibonacci[index] + fibonacci[index - 1]
         fibonacci.append(nextFib)
         index += 1
@@ -17,5 +17,5 @@ def fibonacciEvenSum(limit):
     return evenSum
 
 if __name__ == '__main__':
-    limit = 4000000
-    print(fibonacciEvenSum(limit))
+    ceiling = 4000000
+    print(fibonacciEvenSum(ceiling))

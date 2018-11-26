@@ -6,9 +6,9 @@ def is_palindrome(n):
 
     return True
 
-def largest_palindrome_product(start, limit):
+def largest_palindrome_product(start, ceiling):
     maxProduct = 0
-    for i in range(limit - 1, start - 1, -1):
+    for i in range(ceiling - 1, start - 1, -1):
         for j in range(i, start - 1, -1):
             product = i * j
             if (is_palindrome(product)):
@@ -18,5 +18,5 @@ def largest_palindrome_product(start, limit):
 
 if __name__ == '__main__':
     start = 100
-    limit = 1000
-    print(largest_palindrome_product(start, limit))
+    ceiling = 1000
+    print(largest_palindrome_product(start, ceiling))
