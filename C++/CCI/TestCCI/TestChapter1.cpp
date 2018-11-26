@@ -113,6 +113,49 @@ public:
 		Assert::AreEqual(longCompressExpected, Chapter1::compressString(longCompress));
 	}
 
+	TEST_METHOD(testZeroMatrix)
+	{
+		std::vector<std::vector<int>> matrix;
+		for (auto i = 0; i < 5; i++)
+		{
+			std::vector<int> row;
+			for (auto j = 0; j < 5; j++)
+			{
+				row.push_back(i + j + 1);
+			}
+			matrix.push_back(row);
+		}
+
+		matrix[1][1] = 0;
+		matrix[3][4] = 0;
+
+		std::vector<std::vector<int>> zMatrix;
+		for (auto i = 0; i < 5; i++)
+		{
+			std::vector<int> row;
+			for (auto j = 0; j < 5; j++)
+			{
+				if (i != 1 && i!= 3 && j!= 1 && j != 4)
+				{
+					row.push_back(i + j + 1);
+				}
+				else
+				{
+					row.push_back(0);
+				}
+			}
+			zMatrix.push_back(row);
+		}
+
+		Chapter1::zeroMatrix(matrix);
+		for (auto i = 0; i < matrix.size(); i++)
+		{
+			for (auto j = 0; j < matrix.size(); j++)
+			{
+				Assert::AreEqual(zMatrix[i][j], matrix[i][j]);
+			}
+		}
+	}
 	TEST_METHOD(testIsStringRotation)
 	{
 		std::string waterbottle = "waterbottle";
@@ -123,5 +166,20 @@ public:
 		Assert::IsTrue(Chapter1::isStringRotation(waterbottle, erbottlewat));
 		Assert::IsFalse(Chapter1::isStringRotation(waterbottle, bottlewate));
 		Assert::IsFalse(Chapter1::isStringRotation(waterbottle, bottlerwate));
+	}
+
+	private:
+	static void printMatrix(std::vector<std::vector<int>> matrix)
+	{
+		for (auto i = 0; i < matrix.size(); i++)
+		{
+			std::string message;
+			for (auto j = 0; j < matrix.size(); j++)
+			{
+				message += std::to_string(matrix[i][j]) + " ";
+			}
+			Logger::WriteMessage(message.c_str());
+		}
+		Logger::WriteMessage("Matrix end");
 	}
 };

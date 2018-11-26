@@ -197,7 +197,35 @@ void Chapter1::rotateMatrix(std::vector<std::vector<int>>& matrix)
 
 void Chapter1::zeroMatrix(std::vector<std::vector<int>>& matrix)
 {
-	
+	for (auto i = 0; i < matrix.size(); i++)
+	{
+		for (auto j = 0; j < matrix[i].size(); j++)
+		{
+			if (matrix[i][j] == 0)
+			{
+				for (auto& row : matrix)
+				{
+					row[j] = -1;
+				}
+
+				for (auto& element : matrix[i])
+				{
+					element = -1;
+				}
+			}
+		}
+	}
+
+	for (auto& row : matrix)
+	{
+		for (auto& element : row)
+		{
+			if (element == -1)
+			{
+				element = 0;
+			}
+		}
+	}
 }
 
 bool Chapter1::isStringRotation(std::string s1, std::string s2)
