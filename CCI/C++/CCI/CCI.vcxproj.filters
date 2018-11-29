@@ -18,9 +18,30 @@
     <ClCompile Include="Chapter1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Chapter2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SinglyLinkedList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DoublyLinkedList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Chapter1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SinglyLinkedList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DoublyLinkedList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

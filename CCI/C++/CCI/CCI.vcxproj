@@ -20,9 +20,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Chapter1.cpp" />
+    <ClCompile Include="Chapter2.cpp" />
+    <ClCompile Include="DoublyLinkedList.cpp" />
+    <ClCompile Include="SinglyLinkedList.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Chapter1.h" />
+    <ClInclude Include="Chapter2.h" />
+    <ClInclude Include="DoublyLinkedList.h" />
+    <ClInclude Include="Node.h" />
+    <ClInclude Include="SinglyLinkedList.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
