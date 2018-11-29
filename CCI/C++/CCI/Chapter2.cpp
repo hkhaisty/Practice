@@ -20,6 +20,29 @@ void Chapter2::removeDuplicates(SinglyLinkedList list)
 	}
 }
 
+void Chapter2::removeDuplicatesNoBuffer(SinglyLinkedList list)
+{
+	auto slow(list.root);
+	while (slow)
+	{
+		auto fast(slow->next);
+		while (fast)
+		{
+			if (fast->value == slow->value)
+			{
+				fast = fast->next;
+				list.deleteNode(fast->value);
+			}
+			else
+			{
+				fast = fast->next;
+			}
+		}
+
+		slow = slow->next;
+	}
+}
+
 Node* Chapter2::kthToLastElementIterative(SinglyLinkedList list, int k)
 {
 	auto slow(list.root), fast(list.root);

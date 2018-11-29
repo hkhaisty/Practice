@@ -34,7 +34,9 @@ void SinglyLinkedList::deleteNode(int value)
 	{
 		if (current->next->value == value)
 		{
+			auto temp = current->next;
 			current->next = current->next->next;
+			delete temp;
 			break;
 		}
 
