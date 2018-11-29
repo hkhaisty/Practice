@@ -12,7 +12,7 @@ TEST_CLASS(TestSinglyLinkedList)
 			linkedList.appendToTail(values[i]);
 		}
 
-		auto current = linkedList.root;
+		auto current(linkedList.root);
 		for (auto value : values)
 		{
 			Assert::AreEqual(value, current->value);
@@ -34,7 +34,7 @@ TEST_CLASS(TestSinglyLinkedList)
 			linkedList.deleteNode(values[i]);
 		}
 
-		auto current = linkedList.root;
+		auto current(linkedList.root);
 		for (auto i = 2; i < values.size(); i++)
 		{
 			Assert::AreEqual(values[i], current->value);
