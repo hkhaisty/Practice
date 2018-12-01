@@ -19,10 +19,11 @@ def compress_string(string):
 
 class Test(unittest.TestCase):
     test_string = 'aabcccccaaa'
-    expected ='a2b1c5a3'
+    expected = 'a2b1c5a3'
 
     def test_compress_string(self):
         self.assertEqual(self.expected, compress_string(self.test_string))
+
 
 if __name__ == "__main__":
     unittest.main()
