@@ -32,9 +32,5 @@ class Test(unittest.TestCase):
             linked_list.root = linked_list.root.next
 
 
-
-
-
-
-
-
+if __name__ == '__main__':
+    unittest.main()
