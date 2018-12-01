@@ -3,7 +3,7 @@ from linked_list import LinkedList
 
 
 def return_kth_element(linked_list, k):
-    slow = fast = linked_list.root
+    slow = fast = linked_list.head
     for i in range(k):
         if fast is None:
             return None
@@ -23,7 +23,7 @@ class Test(unittest.TestCase):
         linked_list = LinkedList(None)
         for value in self.values:
             linked_list.append_to_tail(value)
-        linked_list.root = linked_list.root.next
+        linked_list.head = linked_list.head.next
 
         for i in range(len(self.values)):
             self.assertEqual(self.values[i], return_kth_element(linked_list, len(self.values) - i))

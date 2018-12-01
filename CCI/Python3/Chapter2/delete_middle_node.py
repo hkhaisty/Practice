@@ -19,16 +19,16 @@ class Test(unittest.TestCase):
         linked_list = LinkedList(None)
         for value in self.values:
             linked_list.append_to_tail(value)
-        linked_list.root = linked_list.root.next
+        linked_list.head = linked_list.head.next
 
-        middle_node = linked_list.root
+        middle_node = linked_list.head
         while middle_node.value != self.middle_node_value:
             middle_node = middle_node.next
         delete_middle_node(middle_node)
 
         for value in self.expected:
-            self.assertEqual(value, linked_list.root.value)
-            linked_list.root = linked_list.root.next
+            self.assertEqual(value, linked_list.head.value)
+            linked_list.head = linked_list.head.next
 
 
 if __name__ == '__main__':

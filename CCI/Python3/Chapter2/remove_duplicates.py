@@ -5,7 +5,7 @@ from linked_list import LinkedList
 def remove_duplicates(linked_list):
     nodes = {}
     previous = None
-    current = linked_list.root
+    current = linked_list.head
     while current is not None:
         if current.value in nodes:
             previous.next = current.next
@@ -24,12 +24,12 @@ class Test(unittest.TestCase):
         for value in self.values:
             linked_list.append_to_tail(value)
 
-        linked_list.root = linked_list.root.next
+        linked_list.head = linked_list.head.next
         remove_duplicates(linked_list)
 
         for value in self.result:
-            self.assertEqual(value, linked_list.root.value)
-            linked_list.root = linked_list.root.next
+            self.assertEqual(value, linked_list.head.value)
+            linked_list.head = linked_list.head.next
 
 
 if __name__ == '__main__':
