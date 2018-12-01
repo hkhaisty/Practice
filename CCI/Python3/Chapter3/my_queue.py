@@ -1,15 +1,15 @@
-class Queue:
+class MyQueue:
     class QueueNode:
         def __init__(self, data):
             self.data = data
             self.next = None
 
     def __init__(self):
-        self.first = Queue.QueueNode(None)
-        self.last = Queue.QueueNode(None)
+        self.first = MyQueue.QueueNode(None)
+        self.last = MyQueue.QueueNode(None)
 
     def add(self, data):
-        node = Queue.QueueNode(data)
+        node = MyQueue.QueueNode(data)
         if self.last is not None:
             self.last.next = node
         self.last = node

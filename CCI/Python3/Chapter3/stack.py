@@ -5,11 +5,11 @@ class Stack:
             self.next = None
 
     def __init__(self):
-        self.top = Stack.StackNode(None)
+        self.top = None
 
     def pop(self):
         if self.top is None:
-            return None
+            raise Exception('Empty Stack')
 
         data = self.top.data
         self.top = self.top.next
@@ -23,7 +23,7 @@ class Stack:
 
     def peek(self):
         if self.top is None:
-            return None
+            raise Exception('Empty Stack')
 
         return self.top.data
 
