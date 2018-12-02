@@ -53,6 +53,9 @@ class SetOfStacks:
 
         return data
 
+    # def pop_at(self, index):
+
+
 
 class Test(unittest.TestCase):
     values = [5, 7, 2, 3, 9, 9, 9, 9, 8, 7, 11, 3, 4]
