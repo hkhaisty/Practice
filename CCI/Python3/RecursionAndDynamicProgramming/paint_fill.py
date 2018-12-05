@@ -22,7 +22,6 @@ class Test(unittest.TestCase):
     def test_paint_fill(self):
         screen = [[255, 255, 255], [255, 0, 255], [255, 0, 0]]
         paint_fill(screen, 1, 1, 127)
-
         expected = [[255, 255, 255], [255, 127, 255], [255, 127, 127]]
         self.assertEqual(expected, screen)
 
