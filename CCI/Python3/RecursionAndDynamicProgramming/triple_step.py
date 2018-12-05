@@ -33,7 +33,7 @@ def triple_step(n):
     count = 0
     while not stack.is_empty():
         current = stack.pop()
-        for step in steps:          
+        for step in steps:
             diff = current - step
             if diff == 0:
                 count += 1
@@ -45,8 +45,11 @@ def triple_step(n):
 
 class Test(unittest.TestCase):
     def test_triple_step(self):
-        cases = [0, 1, 2, 3, 4, 5]
-        expected = [0, 1, 2, 4, 6]
+        cases = [0, 1, 2, 3, 4]
+        expected = [0, 1, 2, 4, 7]
+        
+        for case, out in zip(cases, expected):
+            self.assertEqual(out, triple_step(case))
 
 if __name__ == '__main__':
     unittest.main()
