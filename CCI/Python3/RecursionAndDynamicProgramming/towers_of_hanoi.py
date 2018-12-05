@@ -43,11 +43,11 @@ class Tower:
     def move_top(self, tower):
         tower.add(self.disks.pop())
 
-    def move_disks(self, n, destination, buffer):
+    def move_disks(self, n, buffer, destination):
         if n > 0:
-            self.move_disks(n - 1, buffer, destination)
+            self.move_disks(n - 1, destination, buffer)
             self.move_top(destination)
-            buffer.move_disks(n - 1, destination, self)
+            buffer.move_disks(n - 1, self, destination)
 
     def equals(self, tower):
         if self.disks.size != tower.disks.size:
@@ -65,7 +65,7 @@ class Tower:
 
 
 def towers_of_hanoi(n):
-    t1 = t2 = t3 = Tower()
+    t1, t2, t3 = Tower(), Tower(), Tower()
     for i in range(n, 0, -1):
         t1.add(i)
     t1.move_disks(n, t2, t3)
