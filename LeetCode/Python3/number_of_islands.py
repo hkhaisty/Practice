@@ -3,7 +3,7 @@ Solution -- Recursive Depth First Search
 Runtime Complexity -- O(m x n)
 Space Complexity -- O(m x n)
 '''
-def numIslands(self, grid):
+def num_islands(self, grid):
     def mark_landmass(grid, row, col):
         if row < 0 or col < 0 or row >= len(grid) or col >= len(grid[row]):
             return 

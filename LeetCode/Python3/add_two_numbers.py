@@ -9,7 +9,7 @@ Solution
 Runtime Complexity -- O(m + n)
 Space Complexity -- O(max(m, n))
 '''
-def addTwoNumbers(self, l1, l2):
+def add_two_numbers(self, l1, l2):
     current = lSum = ListNode(0)
     carry = 0
     while l1 or l2:

@@ -4,7 +4,7 @@ Runtime Complexity - O(n)
 Space Complexity - O(n), n = unique characters in s
 '''
 class Solution:
-    def lengthOfLongestSubstring(self, s):
+    def length_of_longest_substring(self, s):
         char_idx = {}
         result = j = 0
         for i, c in enumerate(s):
