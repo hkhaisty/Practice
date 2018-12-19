@@ -1,6 +1,3 @@
-import unittest
-
-
 class Node:
     def __init__(self, data):
         self.data = data
@@ -44,17 +41,3 @@ def is_valid_parentheses(s):
             return False
             
     return chars.is_empty()
-
-
-class Test(unittest.TestCase):
-    def test_valid_parentheses(self):
-        self.assertTrue(is_valid_parentheses('()'))
-        self.assertTrue(is_valid_parentheses('()[]{}'))
-        self.assertTrue(is_valid_parentheses('{{[]}}()()([][])'))
-        self.assertFalse(is_valid_parentheses('(]'))
-        self.assertFalse(is_valid_parentheses('([)]'))
-        self.assertFalse(is_valid_parentheses('}}}}{{{{'))
-
-
-if __name__ == '__main__':
-    unittest.main()
