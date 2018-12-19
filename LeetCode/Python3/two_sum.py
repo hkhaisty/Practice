@@ -1,5 +1,5 @@
 '''
-Solution -- Hash Table Implementation
+Solution -- Hash Table 
 Runtime Complexity -- O(n)
 Space Complexity -- O(n)
 '''

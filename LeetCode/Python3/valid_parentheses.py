@@ -27,7 +27,7 @@ class Stack:
 
 
 ''' 
-Solution -- Stack Implementation
+Solution -- Stack 
 Runtime Complexity -- O(n) 
 Space Complexity -- O(n) 
 '''

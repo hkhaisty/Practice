@@ -50,7 +50,7 @@ class DoublyLinkedList:
     
 
 '''
-Solution -- Hash Table and Doubly Linked List Implementation
+Solution -- Hash Table and Doubly Linked List 
 Runtime Complexity -- O(1) 
 Space Complexity -- O(capacity)
 '''
