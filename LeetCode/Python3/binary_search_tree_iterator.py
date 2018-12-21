@@ -1,3 +1,8 @@
+'''
+Solution -- Stack
+Runtime Complexity -- amortized O(1)
+Space Complexity -- O(h)
+'''
 class BSTIterator(object):
     def __init__(self, root):
         self.nodes = []
